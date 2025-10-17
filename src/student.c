@@ -4,6 +4,10 @@
 #include <errno.h>
 #include <string.h>
 
+// TODO: Implementation
+void writeToFile(Student s);
+void getFromFile(int id);
+
 void student_new(Student *s, const char *id, const char *name, int birth_year,
                  const char *major) {
   if (strlen(id) > ID_MAX_LENGTH) {

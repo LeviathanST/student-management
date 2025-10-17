@@ -14,22 +14,16 @@ typedef struct {
   float gpa;
 } Student;
 
-/*
- * Default GPA is `0`.
- * This caller should call `student_free()` after finish.
- */
+/// Default GPA is `0`.
 void student_new(Student *s, const char *id, const char *name, int birth_year,
                  const char *major);
-
-// default GPA is 0
-void student_free(Student *s);
 
 /// Get a student by ID from the file.
 Student student_get(char id[15]);
 
 /// Get a student by ID from the file.
-/// @return amount of read student.
-unsigned int student_getAll(Student buf[]);
+/// @return a student array.
+Student *student_getAll(Student buf[]);
 
 /// Write a student to the file.
 void student_add(Student s);
