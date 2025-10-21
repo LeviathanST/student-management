@@ -1,3 +1,6 @@
+#ifndef SCORE_H
+#define SCORE_H
+
 typedef struct {
   char subject[15];
   int value;
@@ -12,3 +15,5 @@ void score_write(const char *student_id, const char *subject, int value);
 
 /// Calculate GPA of a student.
 void score_calcGPA(const char *student_id);
+
+#endif
