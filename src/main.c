@@ -1,8 +1,23 @@
+#include "student.h"
 #include "util.h"
 
 #include <errno.h>
 #include <stdio.h>
 #include <string.h>
+
+int exec_cmd(char cmd[20]) {
+  if (strcmp("hi", cmd) == 0) {
+    printf("Hi there!\n");
+  } else if (strcmp("exit", cmd) == 0) {
+    return 1;
+    printf("Bye!\n");
+  } else if (strcmp("write", cmd) == 0) {
+    student_new();
+  } else {
+    print_err("Command not found!");
+  }
+  return 0;
+}
 
 int main() {
   int exit = 0;
@@ -12,14 +27,7 @@ int main() {
     printf("SM> ");
     scanf("%s", user_input);
 
-    if (strcmp("hi", user_input) == 0) {
-      printf("Hi there!\n");
-    } else if (strcmp("exit", user_input) == 0) {
-      exit = 1;
-      printf("Bye!\n");
-    } else {
-      print_err("Command not found!");
-    }
+    exit = exec_cmd(user_input);
   }
 
   if (errno > 0) {
