@@ -14,8 +14,7 @@ typedef struct {
 } Student;
 
 /// Default GPA is `0`.
-void student_new(Student *s, const char *id, const char *name, int birth_year,
-                 const char *major);
+void student_new();
 
 /// Get a student by ID from the file.
 Student student_get(char id[15]);
